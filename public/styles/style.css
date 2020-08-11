@@ -148,3 +148,15 @@ text-align: center;
   header ul{
     list-style-type: none;
   }
+
+  .like-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .imageBox{
+    width: 350px;
+    margin: 20px;
+  }

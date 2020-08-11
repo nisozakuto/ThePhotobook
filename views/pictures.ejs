@@ -1,51 +1,32 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<%- include('./partials/boilerplate') %>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/style.css">
-</head>
-
-<body>
-    <header>
-        <div class=" logo">Photobook</div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/#">Login</a></li>
-                <li><a href="/#">Signup</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="wrapper">
-        <!-- <h2>pictures</h2> -->
-        <% for (let picture of data.pictures) { %>
-        <h2><%= picture.pic_url %></h2>
+<!-- <div class="wrapper"> -->
+<div>
+    <!-- <h2>pictures</h2> -->
+    <% for (let picture of data.pictures) { %>
+    <div class="imageBox">
+        <img src="https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&h=350">
+        <div class="row like-row">
+            <img src="/liked.png" width="36">
+            <h5>Liked status</h5>
+        </div>
+        <div class="row">
+            <div>
+                <h4>See it in full res</h4>
+            </div>
+        </div>
+        <div class="row">
+            <h6>Delete</h6>
+        </div>
+        <p>Temp</p>
         <h2><%= picture.pic_desc %></h2>
-        <h2><%= message %></h2>
         <% } %>
 
     </div>
+</div>
 
-    <!--[if lt IE 7]>
+<!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your
                 browser</a> to improve your experience.</p>
         <![endif]-->
-    <footer class="footer">
-        Created by Niso
-    </footer>
-    <script src="" async defer></script>
-</body>
-
-</html>
+<%- include('./partials/end') %>
