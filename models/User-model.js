@@ -43,10 +43,10 @@ module.exports = User
 
 //User.getAll().then(console.log);
 
-const user = new User({
-    username: 'nisoTest',
-    password_digest: 'loremipsum'
-})
+// const user = new User({
+//     username: 'nisoTest',
+//     password_digest: 'loremipsum'
+// })
 
-user.save().then(console.log)
-User.findByUserName('nisoTest').then(console.log)
+// user.save().then(console.log)
+// User.findByUserName('nisoTest').then(console.log)
