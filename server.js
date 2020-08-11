@@ -3,7 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-const animalRouter = require('./routers/the-photobook-routers');
+const photobookRouter = require('./routers/the-photobook-routers');
 
 const app = express();
 
@@ -30,6 +30,8 @@ app.get('/', (req, res) => {
         appName: 'The photobook'
     });
 });
+
+app.use('/photobook', photobookRouter);
 
 app.use('*', (req, res) => {
     res.status(404).send({
