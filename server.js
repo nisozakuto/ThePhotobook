@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const photobookRouter = require('./routers/the-photobook-routers');
 
 const app = express();
+require('dotenv').config();
 
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
