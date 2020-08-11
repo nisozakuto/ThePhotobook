@@ -3,10 +3,10 @@ const photoController = {};
 
 photoController.index = (req, res) => {
     Photo.getAll()
-        .then((photos) => {
+        .then((pictures) => {
             res.render('pictures', {
                 message: 'ok',
-                data: { photos }
+                data: { pictures }
             });
         })
     //Catch here

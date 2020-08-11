@@ -29,7 +29,13 @@
     </header>
 
     <div class="wrapper">
-        <h2>pictures</h2>
+        <!-- <h2>pictures</h2> -->
+        <% for (let picture of data.pictures) { %>
+        <h2><%= picture.pic_url %></h2>
+        <h2><%= picture.pic_desc %></h2>
+        <h2><%= message %></h2>
+        <% } %>
+
     </div>
 
     <!--[if lt IE 7]>

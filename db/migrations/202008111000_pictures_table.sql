@@ -6,3 +6,7 @@ CREATE TABLE IF NOT EXISTS pictures
     pic_desc VARCHAR(255),
     liked BOOLEAN 
 );
+
+
+ALTER TABLE pictures 
+RENAME COLUMN picUrl TO pic_url;

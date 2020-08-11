@@ -3,7 +3,7 @@ const db = require('../db/config');
 class Picture {
     constructor(pictures) {
         this.id = pictures.id || null;
-        this.picUrl = pictures.picUrl;
+        this.pic_url = pictures.pic_url;
         this.albumId = pictures.albumId;
         this.pic_desc = pictures.pic_desc;
         this.liked = pictures.liked;
