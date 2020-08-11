@@ -1,8 +1,10 @@
 const User = require('../models/User-model')
 
 const usersController = {
-    new(req, res, next) {
-        res.send('hello from photbook/new')
+    async new(req, res, next) {
+        const users = await User.getAll()
+        res.json({ users })
+
     },
     create(req, res, next) {
         res.send('hello from photbook/create')
