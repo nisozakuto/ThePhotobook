@@ -11,7 +11,7 @@ class Picture {
 
     static getAll() {
         return db.manyOrNone('SELECT * FROM pictures')
-            .then((picture) => {
+            .then((pictures) => {
                 return pictures.map((picture) => {
                     return new this(picture);
                 })
