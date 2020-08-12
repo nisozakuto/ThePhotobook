@@ -50,9 +50,10 @@ app.use('/photobook', photobookRouter);
 app.use('/users', usersRouter)
 
 app.use('*', (req, res) => {
-    res.status(404).send({
-        error: 'Not Found',
+    // res.status(404).send({
+    //     error: 'Not Found',
+    // });
+    res.render('404', {
+        appName: 'The photobook'
     });
-    // res.render('404', {
-    //   });
 })
