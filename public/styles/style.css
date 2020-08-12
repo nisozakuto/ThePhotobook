@@ -158,6 +158,12 @@ body {
      display:flex; 
      align-items:center; 
   }
+
+  .logo:visited
+  {
+    color: #d17f90;
+
+  }
   
   header nav ul li a {
     padding: 0 15px;

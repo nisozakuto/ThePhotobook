@@ -7,3 +7,9 @@ CREATE TABLE IF NOT EXISTS users (
 
 ALTER TABLE users
 DROP email;
+
+ALTER TABLE users
+ADD UNIQUE (username);
+
+ALTER TABLE users
+ADD COLUMN user_id INTEGER REFERENCES users(id);

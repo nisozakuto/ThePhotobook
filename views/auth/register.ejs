@@ -1,7 +1,8 @@
 <%- include('../partials/boilerplate') %>
+<h1>Register</h1>
 
 <div class='form-container'>
-    <form action="/">
+    <form action="/user" method="POST">
         <label for="username">Username: </label>
         <input name='username' type='text' placeholder='Username' required />
         <br>
@@ -11,5 +12,4 @@
         <input type="submit" value="Submit">
     </form>
 </div>
-
 <%- include('../partials/end') %>

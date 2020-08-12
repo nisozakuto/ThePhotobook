@@ -1,11 +1,20 @@
+const bcrypt = require('bcryptjs');
+
 const db = require('../db/config')
 
 class User {
     constructor({ id, username, password_digest }) {
-        this.id = id;
+        this.id = id || null;
         this.username = username;
         this.password_digest = password_digest;
     }
+
+    // alternative way of doing this
+    // constructor(user) {
+    //     this.id = user.id || null;
+    //     this.username = user.username;
+    //     this.password_digest = user.password_digest;
+    // }
 
     static async findByUserName(username) {
         const user = await db.oneOrNone(
@@ -24,6 +33,12 @@ class User {
     static async getAll() {
         const dbRes = await db.manyOrNone(`SELECT * FROM users;`)
         return dbRes.map((user) => new User(user))
+    }
+
+    setPassword(password) {
+        const salt = bcrypt.genSaltSync();
+        const hash = bcrypt.hashSync(password, salt);
+        this.password_digest = hash;
     }
 
     async save() {

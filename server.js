@@ -8,6 +8,7 @@ const passport = require('passport');
 
 const photobookRouter = require('./routers/the-photobook-router');
 const usersRouter = require('./routers/users-router')
+const authRouter = require('./routers/authRouter')
 
 const app = express();
 require('dotenv').config();
@@ -16,6 +17,7 @@ app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 //Below for the user auth
 app.use(cookieParser());
 app.use(session({
@@ -47,6 +49,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/photobook', photobookRouter);
+app.use('/auth', authRouter)
 app.use('/users', usersRouter)
 
 app.use('*', (req, res) => {
