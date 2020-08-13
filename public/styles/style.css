@@ -182,8 +182,13 @@ body {
     flex-direction: row;
     justify-content: space-between;
   }
-
+  .imageContainer{
+    display: flex;
+    flex-wrap: wrap;
+  }
   .imageBox{
-    width: 350px;
+    /* width: 350px; */
+    /* height: 200px; */
     margin: 20px;
+    object-fit: contain;
   }
