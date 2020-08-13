@@ -10,3 +10,6 @@ CREATE TABLE IF NOT EXISTS pictures
 
 ALTER TABLE pictures 
 RENAME COLUMN picUrl TO pic_url;
+
+ALTER TABLE pictures
+ADD COLUMN pic_url_full_size TEXT;
