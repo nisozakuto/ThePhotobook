@@ -6,65 +6,65 @@
 </div>
 <div class="albums-container">
     <div class="col-25">
+        <!-- make a loop -->
         <ul>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='Holding Hands' />
+                    <input class="add-a-new-album" type="submit" value='Holding Hands' />
                     <input type="hidden" name="name" value='Holding Hands' />
                 </form>
             </li>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='Wedding' />
+                    <input class="add-a-new-album" type="submit" value='Wedding' />
                     <input type="hidden" name="name" value='Wedding' />
                 </form>
             </li>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='People' />
+                    <input class="add-a-new-album" type="submit" value='People' />
                     <input type="hidden" name="name" value='People' />
                 </form>
             </li>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='Family' />
+                    <input class="add-a-new-album" type="submit" value='Family' />
                     <input type="hidden" name="name" value='Family' />
                 </form>
             </li>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='Couple' />
+                    <input class="add-a-new-album" type="submit" value='Couple' />
                     <input type="hidden" name="name" value='Couple' />
                 </form>
             </li>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='Love' />
+                    <input class="add-a-new-album" type="submit" value='Love' />
                     <input type="hidden" name="name" value='Love' />
                 </form>
             </li>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='Dark background' />
+                    <input class="add-a-new-album" type="submit" value='Dark background' />
                     <input type="hidden" name="name" value='Dark background' />
                 </form>
             </li>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='Happy Birthday' />
+                    <input class="add-a-new-album" type="submit" value='Happy Birthday' />
                     <input type="hidden" name="name" value='Happy Birthday' />
                 </form>
             </li>
             <li>
                 <form method='POST' action='/albums'>
-                    <input class="add-a-new-album" value='Strategy' />
+                    <input class="add-a-new-album" type="submit" value='Strategy' />
                     <input type="hidden" name="name" value='Strategy' />
                 </form>
             </li>
         </ul>
         <!-- Add styling to the li items -->
     </div>
-
 
     <div class="col-75">
         <h1>
@@ -75,7 +75,7 @@
         <div class="albumBox">
             <div class="albumRow">
                 <div class="left">
-                    <a href=" /albums/<%= album.id%>">
+                    <a href="/albums/<%= album.id%>">
                         <h1><%= album.name %></h1>
                     </a>
                 </div>
@@ -88,7 +88,6 @@
 
         </div>
         <% } %>
-
     </div>
 </div>
 

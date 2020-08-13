@@ -11,5 +11,5 @@ DROP email;
 ALTER TABLE users
 ADD UNIQUE (username);
 
-ALTER TABLE users
+ALTER TABLE albums
 ADD COLUMN user_id INTEGER REFERENCES users(id);

@@ -17,12 +17,29 @@ AlbumController.index = (req, res) => {
         });
 };
 
-AlbumController.show = (req, res, next) => {
-    Album.getById(req.params.id)
-    console.log(req)
-        .then((album) => {
-
+AlbumController.show = async (req, res, next) => {
+    const album = await Album.getById(req.params.id)
+    const photos = await album.photos()
+    res.render('pictures',
+        {
+            message: 'Ok',
+            data: {
+                photos: photos
+            }
         })
+    //     .then((album) => {
+    //         console.log(album.photos())
+    //         album.photos()
+    //             .then((photos) => {
+    //                 res.render('pictures',
+    //                     {
+    //                         message: 'Ok',
+    //                         data: {
+    //                             photos: photos
+    //                         }
+    //                     })
+    //             })
+    //     })
 }
 
 AlbumController.create = (req, res, next) => {
@@ -42,6 +59,7 @@ AlbumController.create = (req, res, next) => {
 };
 
 AlbumController.delete = (req, res, next) => {
+    console.log('ID ', req.params.id)
     Album.getById(req.params.id)
         .then((album) => {
             return album.delete();
