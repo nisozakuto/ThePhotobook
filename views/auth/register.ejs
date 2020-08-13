@@ -1,13 +1,12 @@
 <%- include('../partials/boilerplate') %>
-<h1>Register</h1>
 
 <div class='form-container'>
+    <h1 class='form-title'>Register</h1>
+
     <form action="/users" method="POST">
-        <label for="username">Username: </label>
-        <input name='username' type='text' placeholder='Username' required />
+        <input class="username" name='username' type='text' placeholder='Username' required />
         <br>
-        <label for="password">Password: </label>
-        <input name='password' type='text' placeholder='Password' required />
+        <input class="password" name='password' type='password' placeholder='Password' required />
         <br>
         <input type="submit" value="Submit">
     </form>
