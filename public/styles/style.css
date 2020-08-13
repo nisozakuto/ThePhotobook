@@ -199,8 +199,13 @@ body {
     width: auto\9; /* ie8 */
   }
   .full-size-row
-  { display: flex;
+  { 
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 90vw;
+  }
+
+  .photobook_picture{
+    max-width: 350px;
   }
