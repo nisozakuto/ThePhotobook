@@ -18,20 +18,9 @@ photoController.index = (req, res) => {
 
 photoController.show = (req, res, next) => {
     Photo.getById(req.params.id)
-        // .then((photo) => {
-        //     res.locals.photo = photo;
-        //     next();
-        // }).catch((err) => {
-        //     console.log(err);
-        //     res.status(500).json({ err, message: err.message });
-        // });
         .then((picture) => {
-            res.locals.picture = picture;
+            res.locals.picture.pic_url = picture;
             next();
-            // res.render('pictures'), {
-            //     message: "OK",
-            //     data: { picture },
-            // }
         })
 };
 
