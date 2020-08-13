@@ -7,8 +7,9 @@ const session = require('express-session');
 const passport = require('passport');
 
 const photobookRouter = require('./routers/the-photobook-router');
-const usersRouter = require('./routers/users-router')
-const authRouter = require('./routers/authRouter')
+const usersRouter = require('./routers/users-router');
+const authRouter = require('./routers/authRouter');
+const albumRouter = require('./routers/album-router');
 
 const app = express();
 require('dotenv').config();
@@ -48,9 +49,11 @@ app.get('/', (req, res) => {
     });
 });
 
+app.use('/albums', albumRouter);
 app.use('/photobook', photobookRouter);
 app.use('/auth', authRouter)
 app.use('/users', usersRouter)
+
 
 app.use('*', (req, res) => {
     // res.status(404).send({

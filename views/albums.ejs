@@ -1,0 +1,46 @@
+<%- include('./partials/boilerplate') %>
+
+<!-- <div class="wrapper"> -->
+<div class="albums-page-title center">
+    <h1>Your albums</h1>
+</div>
+<div class="albums-container">
+    <div class="col-25">
+        <ul>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input type='submit' value='Holding Hands' />
+                    <input type="hidden" name="name" value='Holding Hands' />
+                </form>
+            </li>
+            <li>Wedding</li>
+            <li>People</li>
+            <li>Family</li>
+            <li>Couple</li>
+            <li>Love</li>
+            <li>Dark background</li>
+            <li>Happy Birthday</li>
+            <li>Strategy</li>
+        </ul>
+        <!-- Add styling to the li items -->
+    </div>
+    <div class="col-75">
+        <h1>
+            YOUR ALBUMS
+        </h1>
+
+        <div class="albumBox">
+            <a>
+                <h1>My Album</h1>
+            </a>
+        </div>
+
+
+    </div>
+</div>
+
+<!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your
+                browser</a> to improve your experience.</p>
+        <![endif]-->
+<%- include('./partials/end') %>
