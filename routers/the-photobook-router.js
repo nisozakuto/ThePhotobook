@@ -12,13 +12,18 @@ const photoHelper = (req, res, next) => {
 
 photobookRouter.get('/', photobookController.index);
 // photobookRouter.get('/:id([0-9]+)', photobookController.show);
-photobookRouter.post('/', photobookController.create);
+photobookRouter.post('/photobook', photobookController.create);
 photobookRouter.delete('/:id([0-9]+)', photobookController.delete);
 photobookRouter.get('/:id([0-9]+)', photobookController.show, photoHelpers.getAPicture, (req, res) => {
     res.render('photobook/show', {
-        // picture: picture
+        data: {
+            photo: res.locals.photo
+
+            // picture: picture
+        }
     })
 });
+
 // photobookRouter.post('/', photobookController.create);
 //POST error: Route.post() requires a callback function but got a [object Undefined]
 // photobookRouter.get('/', (req, res) => {
@@ -30,9 +35,6 @@ photobookRouter.get('/:id([0-9]+)', photobookController.show, photoHelpers.getAP
 //         photo: res.locals.photo,
 //     });
 // });
-
-
-
 
 // pizzaRoutes.get('/', pizzaController.index);
 // pizzaRoutes.get('/add', (req, res) => {

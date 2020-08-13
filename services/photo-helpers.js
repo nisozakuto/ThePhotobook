@@ -11,7 +11,10 @@ const getAPicture = (req, res, next) => {
         .then((fetchRes) =>
             fetchRes.json())
         .then((allPictures) => {
-            console.log(allPictures);
+            // console.log(allPictures);
+            if (allPictures.photos.length) {
+                res.locals.photos = allPictures.photos[0].src.medium;
+            }
             // const picture = allPictures.photos[0].src.medium;
             // res.locals.aPicture = picture;
             next();
@@ -21,6 +24,14 @@ const getAPicture = (req, res, next) => {
         });
 };
 
+function fetchAPicture(albumid) {
+
+
+}
+
+
 module.exports = {
-    getAPicture,
+    getAPicture, fetchAPicture,
 };
+
+

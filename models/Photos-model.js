@@ -1,20 +1,20 @@
-const db = require('../db/config');
+const db = require('../db/config')
 
 class Photo {
-    constructor(photos) {
-        this.id = photos.id || null;
-        this.pic_url = photos.pic_url;
-        this.album_id = photos.album_id;
-        this.pic_desc = photos.pic_desc;
-        this.liked = photos.liked;
-        this.pic_url_full_size = photos.pic_url_full_size;
+    constructor(photo) {
+        this.id = photo.id || null;
+        this.pic_url = photo.pic_url;
+        this.album_id = photo.album_id;
+        this.pic_desc = photo.pic_desc;
+        this.liked = photo.liked;
+        this.pic_url_full_size = photo.pic_url_full_size;
     }
 
     static getAll() {
         return db.manyOrNone('SELECT * FROM pictures')
             .then((photos) => {
-                return photos.map((picture) => {
-                    return new this(picture);
+                return photos.map((photo) => {
+                    return new this(photo);
                 })
             })
     }
@@ -26,6 +26,7 @@ class Photo {
                 throw new Error("Photo not found");
             });
     }
+
     save() {
         return db
             .one(
@@ -39,9 +40,7 @@ class Photo {
                 return Object.assign(this, photo);
             });
     }
-    update(changes) {
 
-    }
     delete() {
         return db.none('DELETE FROM pictures WHERE id = $/id/', this);
     }
