@@ -1,12 +1,17 @@
 <%- include('./partials/boilerplate') %>
 
 <!-- <div class="wrapper"> -->
-<div>
+<h1>Add a new picture</h1>
+<form method='POST' action='/photobook'>
+    <input type='submit' value='New Picture' />
+</form>
+
+<div class="imageContainer">
     <!-- <h2>pictures</h2> -->
     <% for (let picture of data.pictures) { %>
     <div class="imageBox">
-        <img src="https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&h=350">
-        <div class="row like-row">
+        <img src="<%= picture.pic_url %>">
+        <div class=" row like-row">
             <img src="/notLiked.png" id="likedButton" width="36">
             <h5>Liked status</h5>
         </div>
@@ -16,12 +21,15 @@
             </div>
         </div>
         <div class="row">
-            <h6>Delete</h6>
+            <form method="POST" action="/photobook/<%= picture.id %>?_method=DELETE">
+                <input type="submit" value="Delete this picture">
+            </form>
         </div>
         <p>Temp</p>
         <h2><%= picture.pic_desc %></h2>
-        <% } %>
     </div>
+
+    <% } %>
 </div>
 
 <!--[if lt IE 7]>
