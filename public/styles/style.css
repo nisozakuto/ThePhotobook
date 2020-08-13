@@ -13,17 +13,15 @@ body {
   }
 
   .form-container{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
     width: 400px;
     height: 400px;
     margin: 7em auto;
-    display: flex;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
   }
-.username{
-  width: 76%;
-
-}
 
   form { 
     display: block;
@@ -69,12 +67,21 @@ body {
     display: flex;
     flex-direction: column ;
     justify-content: center;
+    margin-bottom: 20px;
   }
   .albumBox h1{
     margin-left: 40px;
+
+    
   }
   .albumBox:hover{
     background-color: rgba(223,	223	,223, 1	);
+  }
+
+  .albumRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   .center{
@@ -104,6 +111,12 @@ body {
     margin-top: -50px; /* account for padding and border if not using box-sizing: border-box; */
   
   }
+
+  .add-a-new-album{
+  background-color: transparent;
+
+  }
+  
 /*   
   
 html{
@@ -251,3 +264,5 @@ body {
   .photobook_picture{
     max-width: 350px;
   }
+
+

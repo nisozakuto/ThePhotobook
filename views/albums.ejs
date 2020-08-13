@@ -9,38 +9,89 @@
         <ul>
             <li>
                 <form method='POST' action='/albums'>
-                    <input type='submit' value='Holding Hands' />
+                    <input class="add-a-new-album" value='Holding Hands' />
                     <input type="hidden" name="name" value='Holding Hands' />
                 </form>
             </li>
-            <li>Wedding</li>
-            <li>People</li>
-            <li>Family</li>
-            <li>Couple</li>
-            <li>Love</li>
-            <li>Dark background</li>
-            <li>Happy Birthday</li>
-            <li>Strategy</li>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input class="add-a-new-album" value='Wedding' />
+                    <input type="hidden" name="name" value='Wedding' />
+                </form>
+            </li>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input class="add-a-new-album" value='People' />
+                    <input type="hidden" name="name" value='People' />
+                </form>
+            </li>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input class="add-a-new-album" value='Family' />
+                    <input type="hidden" name="name" value='Family' />
+                </form>
+            </li>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input class="add-a-new-album" value='Couple' />
+                    <input type="hidden" name="name" value='Couple' />
+                </form>
+            </li>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input class="add-a-new-album" value='Love' />
+                    <input type="hidden" name="name" value='Love' />
+                </form>
+            </li>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input class="add-a-new-album" value='Dark background' />
+                    <input type="hidden" name="name" value='Dark background' />
+                </form>
+            </li>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input class="add-a-new-album" value='Happy Birthday' />
+                    <input type="hidden" name="name" value='Happy Birthday' />
+                </form>
+            </li>
+            <li>
+                <form method='POST' action='/albums'>
+                    <input class="add-a-new-album" value='Strategy' />
+                    <input type="hidden" name="name" value='Strategy' />
+                </form>
+            </li>
         </ul>
         <!-- Add styling to the li items -->
     </div>
+
+
     <div class="col-75">
         <h1>
             YOUR ALBUMS
         </h1>
 
+        <% for (let album of data.albums) { %>
         <div class="albumBox">
-            <a>
-                <h1>My Album</h1>
-            </a>
-        </div>
+            <div class="albumRow">
+                <div class="left">
+                    <a href=" /albums/<%= album.id%>">
+                        <h1><%= album.name %></h1>
+                    </a>
+                </div>
+                <div class="right">
+                    <form method="POST" action="/albums/<%= album.id %>?_method=DELETE">
+                        <input type="submit" value="Delete album">
+                    </form>
+                </div>
+            </div>
 
+        </div>
+        <% } %>
 
     </div>
 </div>
 
-<!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your
-                browser</a> to improve your experience.</p>
-        <![endif]-->
+
+
 <%- include('./partials/end') %>

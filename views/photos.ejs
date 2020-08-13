@@ -1,0 +1,40 @@
+<%- include('./partials/boilerplate') %>
+
+<!-- <div class="wrapper"> -->
+<h1>Add a new picture</h1>
+<form method='POST' action='/photobook'>
+    <input type='submit' value='New Picture' />
+</form>
+
+<div class="imageContainer">
+    <!-- <h2>pictures</h2> -->
+    <% for (let picture of data.pictures) { %>
+    <div class="imageBox">
+        <a href=" /photobook/<%= picture.id%>"><img class="photobook_picture" src="<%= picture.pic_url %>"> </a>
+        <div class=" row like-row">
+            <img src="/notLiked.png" id="likedButton" width="36">
+            <h5>Liked status</h5>
+        </div>
+        <div class="row">
+            <div>
+                <h4>See it in full res</h4>
+            </div>
+        </div>
+        <div class="row">
+            <form method="POST" action="/photobook/<%= picture.id %>?_method=DELETE">
+                <input type="submit" value="Delete this picture">
+            </form>
+        </div>
+        <p>Temp</p>
+        <h2><%= picture.pic_desc %></h2>
+    </div>
+
+    <% } %>
+
+</div>
+
+<!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your
+                browser</a> to improve your experience.</p>
+        <![endif]-->
+<%- include('./partials/end') %>
