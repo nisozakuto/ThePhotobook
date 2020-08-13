@@ -6,13 +6,15 @@ const usersController = require('../controllers/user-controller');
 
 // authRouter.get('/', authHelpers.loginRequired, usersController.index)
 authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
+    // console.log(req.user),
     res.render('auth/login');
 })
 
 authRouter.post(
     '/login',
     passport.authenticate('local', {
-        successRedirect: '/users',
+        // successRedirect: '/users',
+        successRedirect: '/albums',
         failureRedirect: '/auth/login',
         failureFlash: true,
     })
@@ -22,5 +24,6 @@ authRouter.get('/logout', (req, res) => {
     req.logout();
     res.redirect('back');
 })
+
 
 module.exports = authRouter; 

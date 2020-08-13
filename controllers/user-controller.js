@@ -15,7 +15,8 @@ const usersController = {
       .then(user => {
         req.login(user, (err) => {
           if (err) return next(err);
-          res.redirect('/users');
+          // res.redirect('/users');
+          res.redirect('/albums');
         })
       }).catch(next);
   },
@@ -33,23 +34,6 @@ const usersController = {
       }
     })
   }
-
-
-
-  // index(req, res, next) {
-  //   req.user
-  //     .findUserAnimals()
-  //     .then((animals) => {
-  //       res.json({
-  //         message: 'Put a user profile page on this route',
-  //         data: {
-  //           user: req.user,
-  //           animals,
-  //         },
-  //       });
-  //     })
-  //     .catch(next);
-  // }
 }
 
 module.exports = usersController
