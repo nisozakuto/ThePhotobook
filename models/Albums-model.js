@@ -4,7 +4,7 @@ class Album {
     constructor(albums) {
         this.id = albums.id || null;
         this.name = albums.name;
-        this.user_id = albums.user_id;
+        this.user_id = albums.user_id || 1;
     }
 
     static getAll() {
@@ -17,7 +17,7 @@ class Album {
     }
 
     static getById(id) {
-        return db.oneOrNone("SELECT * FROM albums WHERE id =$1", id)
+        return db.oneOrNone("SELECT * FROM pictures WHERE album_id =$1", id)
             .then((album) => {
                 if (album) return new this(album);
                 throw new Error("Album not found");

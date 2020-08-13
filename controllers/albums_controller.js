@@ -19,23 +19,20 @@ AlbumController.index = (req, res) => {
 
 AlbumController.show = (req, res, next) => {
     Album.getById(req.params.id)
+    console.log(req)
         .then((album) => {
-            res.locals.album = album;
-            next();
+
         })
 }
 
 AlbumController.create = (req, res, next) => {
-    console.log(req.body)
-    // console.log(req.user.username)
+    console.log("body: ", req.body)
+    console.log("req.user: ", req.user.id)
     new Album({
         name: req.body.name,
         user_id: req.user.id
     })
         .save()
-        .then(() => {
-
-        })
         .then(() => {
             res.redirect('/albums')
         }).catch((err) => {
