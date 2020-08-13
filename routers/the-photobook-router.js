@@ -6,10 +6,14 @@ const getAPicture = require('../services/photo-helpers')
 
 photobookRouter.get('/', photobookController.index);
 // photobookRouter.get('/:id([0-9]+)', photobookController.show);
-
+photobookRouter.post('/', photobookController.create);
 photobookRouter.delete('/:id([0-9]+)', photobookController.delete);
 
-
+photobookRouter.get('/:id([0-9]+)', photobookController.show, (req, res) => {
+    res.render('photobook/show', {
+        picture: res.locals.picture,
+    })
+});
 // photobookRouter.post('/', photobookController.create);
 //POST error: Route.post() requires a callback function but got a [object Undefined]
 // photobookRouter.get('/', (req, res) => {

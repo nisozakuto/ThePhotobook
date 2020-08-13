@@ -26,23 +26,25 @@ photoController.show = (req, res, next) => {
         //     res.status(500).json({ err, message: err.message });
         // });
         .then((picture) => {
-            // console.log(picture.pic_url)
-            // res.local.picture = picture;
-            // next();
-
-            res.render('photobook/show'), {
-                message: "OK",
-                data: { picture },
-            }
+            res.locals.picture = picture;
+            next();
+            // res.render('pictures'), {
+            //     message: "OK",
+            //     data: { picture },
+            // }
         })
 };
 
 photoController.create = (req, res, next) => {
     new Photo({
-        pic_url: req.body.pic_url,
-        albumId: req.body.albumId,
-        pic_desc: req.body.pic_desc,
-        liked: req.body.liked,
+        // pic_url: req.body.pic_url || 'test',
+        // album_id: req.body.album_id || 'test',
+        // pic_desc: req.body.pic_desc || 'test',
+        // liked: req.body.liked || 'test',
+        pic_url: 'url',
+        album_id: 1,
+        pic_desc: 'desc',
+        liked: true,
     }).save()
         .then(() => {
             res.redirect('/photobook')

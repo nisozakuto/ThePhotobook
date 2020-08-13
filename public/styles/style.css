@@ -192,3 +192,15 @@ body {
     margin: 20px;
     object-fit: contain;
   }
+
+  .full-size-image{
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+  }
+  .full-size-row
+  { display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+  }

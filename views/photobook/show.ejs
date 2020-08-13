@@ -1,9 +1,23 @@
 <%- include('../partials/boilerplate') %>
 
 <div class="wrapper">
-    <h3><%= pictures.pic_url %></h3>
 
-    <h3><%= data.picture.pic_desc %></h3>
-</div>
+    <div>
+        <img class="full-size-image" src="<%= picture.pic_url %>">
+        <div class="full-size-row">
+            <img src="/notLiked.png" id="likedButton" width="36">
+            <h5>Liked status</h5>
+        </div>
+        <div class="full-size-row">
+            <div>
+                <h4>See it in full res</h4>
+            </div>
+        </div>
+        <div class="full-size-row">
+            <form method="POST" action="/photobook/<%= picture.id %>?_method=DELETE">
+                <input type="submit" value="Delete this picture">
+            </form>
+        </div>
+    </div>
 
-<%- include('../partials/end') %>
+    <%- include('../partials/end') %>
