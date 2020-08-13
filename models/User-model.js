@@ -52,6 +52,14 @@ class User {
                 `, this)
         return Object.assign(this, savedUser)
     }
+
+    findUserPictures() {
+        return db
+            .manyOrNone('SELECT * FROM users WHERE user_id = $1', this.id)
+            .then((pictures) => {
+                return pictures.map((picture) => new Picture(picture));
+            });
+    }
 }
 
 module.exports = User
