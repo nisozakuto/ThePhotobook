@@ -1,23 +1,28 @@
 <%- include('../partials/boilerplate') %>
+<%- include('../partials/nav') %>
 
 <div class="wrapper">
-    <div>
-        <img class="full-size-image" src="<%= picture.pic_url %>">
-        <div class="full-size-row">
-            <img src="/notLiked.png" id="likedButton" width="36">
-            <h5>Liked status</h5>
-        </div>
-        <div class="full-size-row">
-            <div>
-                <h4>See it in full res</h4>
-            </div>
-        </div>
-        <div class="full-size-row">
-            <form method="POST" action="/photobook/<%= picture.id %>?_method=DELETE">
-                <input type="submit" value="Delete this picture">
-            </form>
+    <img class="full-size-image" src="<%= photo.pic_url_full_size %>">
+    <div class="full-size-row">
+        <img src="/notLiked.png" id="likedButton" width="36">
+        <h5>Liked status: <%= photo.liked %></h5>
+    </div>
+    <div class="full-size-row">
+        <div>
+            <!-- <h4>See it in full res</h4> -->
         </div>
     </div>
-    <img class="full-size-image" src="<% data.photo %>">
+    <div class="full-size-row">
 
-    <%- include('../partials/end') %>
+    </div>
+</div>
+
+
+
+<h3><%= photo.pic_url %></h3>
+<h3><%= photo.album_id %></h3>
+<h3><%= photo.pic_desc %></h3>
+<h3><%= photo.liked %></h3>
+<h3><%= photo.pic_url_full_size %></h3>
+
+<%- include('../partials/end') %>

@@ -20,8 +20,9 @@ AlbumController.show = async (req, res, next) => {
         {
             message: 'Ok',
             data: {
-                photos: photos,
-                album: album.id
+                photos
+                // photos: photos,
+                // album: album.id
             }
         })
     //     .then((album) => {
@@ -64,8 +65,5 @@ AlbumController.delete = (req, res, next) => {
             res.status(500).json({ err, message: err.message });
         });
 };
-
-
-
 
 module.exports = AlbumController;

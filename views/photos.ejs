@@ -14,8 +14,7 @@
 </div>
 
 <div class="imageContainer">
-    <!-- <h2>pictures</h2> -->
-    <% console.log("this is actually the album id: ",data.photos) %>
+    <% console.log("this is returning the photos on tha page: ", data) %>
     <% for (let photo of data.photos) { %>
     <div class="imageBox">
         <a href="/photos/<%= photo.id%>"><img class="photobook_picture" src="<%= photo.pic_url %>"> </a>

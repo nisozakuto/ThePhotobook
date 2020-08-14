@@ -10,6 +10,7 @@ const photobookRouter = require('./routers/the-photobook-router');
 const usersRouter = require('./routers/users-router');
 const authRouter = require('./routers/authRouter');
 const albumRouter = require('./routers/albums-router');
+const photosRouter = require('./routers/photos-router');
 
 const app = express();
 require('dotenv').config();
@@ -48,6 +49,8 @@ app.get('/', (req, res) => {
 app.use('/albums', albumRouter);
 app.use('/auth', authRouter)
 app.use('/users', usersRouter)
+app.use('/photos', photosRouter);
+
 app.use('*', (req, res) => {
     res.render('404', {
         appName: 'The photobook'
