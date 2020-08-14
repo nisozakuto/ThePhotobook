@@ -2,18 +2,23 @@
 <%- include('./partials/nav') %>
 
 <!-- <div class="wrapper"> -->
-<h3>Add a new picture</h3>
+<div class="addAPic">
+    <!-- <h3>Add a new picture</h3> -->
+    <form method='POST' action='/photos'>
+        <input type='submit' value='Add a new picture' />
+    </form>
 
-<!-- POST is making a wrong request, it should create a new picture -->
-<form method='POST' action='/albums/<%= data.photos.id %>'>
-    <input type='submit' value='New Picture' />
-</form>
+    <form method='POST' action='/photos'>
+        <input type='submit' value='add!' />
+    </form>
+</div>
 
 <div class="imageContainer">
     <!-- <h2>pictures</h2> -->
+    <% console.log("this is actually the album id: ",data.photos) %>
     <% for (let photo of data.photos) { %>
     <div class="imageBox">
-        <a href="/albums/<%= photo.id%>"><img class="photobook_picture" src="<%= photo.pic_url %>"> </a>
+        <a href="/photos/<%= photo.id%>"><img class="photobook_picture" src="<%= photo.pic_url %>"> </a>
         <div class=" row like-row">
             <img src="/notLiked.png" id="likedButton" width="36">
             <h5>Liked status</h5>
@@ -32,9 +37,7 @@
         <p>Temp</p>
         <h4><%= photo.pic_desc %></h4>
     </div>
-
     <% } %>
-
 </div>
 
 <!--[if lt IE 7]>
