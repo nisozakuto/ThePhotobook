@@ -234,8 +234,7 @@ body {
     width: 200px;
     height: 40px;
     margin-top: 50px;
-    background-color: #FFFFFF;
-        
+    background-color: #FFFFFF; 
   }
 
   .homepage_button:hover{
@@ -244,27 +243,19 @@ body {
     box-shadow: 5px 5px rgb(0, 0, 0) ;
     }
   @media screen and (max-width: 1300px) {
-    header {
-      flex-direction: column;
-      align-items: center;
-    }
     .albums-container{
       width: 80vw;
     }
   }
   @media screen and (max-width: 1200px) {
-    header {
-      flex-direction: column;
-      align-items: center;
-    }
-    .albums-container{
+      .albums-container{
       width: 90vw;
     }
   }
 
   @media screen and (max-width: 768px) {
     header {
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
     }
     .albums-page-title h1{
