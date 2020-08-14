@@ -5,7 +5,7 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function loginRedirect(req, res, next) {
-    if (req.user) return res.redirect('/albums');
+    if (req.user) return res.redirect('/users');
     return next();
 }
 

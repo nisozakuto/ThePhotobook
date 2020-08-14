@@ -2,10 +2,11 @@
 
 <!-- <div class="wrapper"> -->
 <h1>Add a new picture</h1>
-<form method='POST' action='/photobook'>
+<form method='POST' action='/photos'>
     <input type='submit' value='New Picture' />
 </form>
 
+<h1> WRRONG PAGE</h1>
 <div class="imageContainer">
     <!-- <h2>pictures</h2> -->
     <% for (let picture of data.photos) { %>
@@ -28,9 +29,7 @@
         <p>Temp</p>
         <h2><%= picture.pic_desc %></h2>
     </div>
-
     <% } %>
-
 </div>
 
 <!--[if lt IE 7]>

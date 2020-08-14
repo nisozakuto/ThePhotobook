@@ -1,9 +1,7 @@
 const express = require('express');
 const albumRouter = express.Router();
 
-const albumController = require('../controllers/albums_controller');
-
-///Helper is not necessary here I think
+const albumController = require('../controllers/albums-controller');
 
 //Get all the albums
 albumRouter.get('/', albumController.index);
@@ -19,5 +17,4 @@ albumRouter.get('/:id([0-9]+)', albumController.show);
 
 
 // app.use('/photos', photosRouter);
-
 module.exports = albumRouter;

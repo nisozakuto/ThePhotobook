@@ -1,19 +1,21 @@
 const Photo = require('../models/Photos-model');
+
 const photoController = {};
+
 photoController.index = (req, res) => {
     Photo.getAll()
         .then((photos) => {
             res.render('photos',
                 {
                     message: 'ok',
-                    data: { pictures }
+                    data: { photos }
                 })
         })
 };
 
 photoController.show = (req, res, next) => {
     Photo.getById(req.params.id)
-        .then((photo) => {
+        .then((picture) => {
             res.locals.picture = picture;
             next();
         })

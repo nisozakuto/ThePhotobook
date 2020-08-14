@@ -2,7 +2,7 @@ const Album = require('../models/Albums-model');
 
 const AlbumController = {};
 
-AlbumController.index = (req, res) => {
+AlbumController.index = (req, res, next) => {
     Album.getAll()
         .then((albums) => {
             res.render('albums',
@@ -10,21 +10,18 @@ AlbumController.index = (req, res) => {
                     message: 'ok',
                     data: { albums }
                 })
-            // .catch((err) => {
-            //     console.log(err);
-            //     res.status(500).json({ err, message: err.message });
-            // });
-        });
+        }).catch(next);
 };
 
 AlbumController.show = async (req, res, next) => {
     const album = await Album.getById(req.params.id)
     const photos = await album.photos()
-    res.render('pictures',
+    res.render('photos',
         {
             message: 'Ok',
             data: {
-                photos: photos
+                photos: photos,
+                album: album.id
             }
         })
     //     .then((album) => {
@@ -52,10 +49,7 @@ AlbumController.create = (req, res, next) => {
         .save()
         .then(() => {
             res.redirect('/albums')
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).json({ err, message: err.message });
-        });
+        }).catch(next);
 };
 
 AlbumController.delete = (req, res, next) => {
@@ -70,5 +64,8 @@ AlbumController.delete = (req, res, next) => {
             res.status(500).json({ err, message: err.message });
         });
 };
+
+
+
 
 module.exports = AlbumController;

@@ -40,10 +40,6 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
-    //Test
-    // res.json({
-    //     message: "lets go",
-    // });
     res.render('index', {
         appName: 'The photobook'
     });
@@ -51,16 +47,19 @@ app.get('/', (req, res) => {
 
 app.use('/albums', albumRouter);
 
-app.use('/photobook', photobookRouter);
+// app.use('/photobook', photobookRouter);
 app.use('/auth', authRouter)
-app.use('/users', usersRouter)
-
+app.use('/user', usersRouter)
 
 app.use('*', (req, res) => {
-    // res.status(404).send({
-    //     error: 'Not Found',
-    // });
     res.render('404', {
         appName: 'The photobook'
     });
+})
+
+app.use((err, req, res, next) => {
+    res.status(err.status || 500).json({
+        message: err.message,
+        stack: err.stack,
+    })
 })

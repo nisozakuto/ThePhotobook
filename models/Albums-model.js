@@ -9,7 +9,8 @@ class Album {
     }
 
     static getAll() {
-        return db.manyOrNone('SELECT * FROM albums WHERE user_id = $1',)
+        // return db.manyOrNone('SELECT * FROM albums WHERE user_id = $1', this.user)
+        return db.manyOrNone('SELECT * FROM albums ORDER BY id ASC ')
             .then((albums) => {
                 return albums.map((album) => {
                     return new this(album);
@@ -52,8 +53,17 @@ class Album {
                 return Object.assign(this, album);
             });
     }
+
     delete() {
         return db.none('DELETE FROM albums WHERE id = $/id/', this);
+    }
+
+    findUserAlbums() {
+        return db
+            .manyOrNone(`SELECT * FROM albums WHERE user_id = $/1/`, this)
+            .then((albums) => {
+                return albums.map((album) => new Album(album))
+            });
     }
 }
 

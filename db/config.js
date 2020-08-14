@@ -13,8 +13,6 @@ else if (process.env.NODE_ENV === 'production') {
     dbData = process.env.DATABASE_URL
 }
 
-
-
 // const DB_NAME = process.env.DB_NAME || 'the_photobook_dev';
 // const options = {
 //     query: (e) => {

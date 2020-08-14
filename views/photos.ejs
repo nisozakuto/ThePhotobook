@@ -2,15 +2,17 @@
 
 <!-- <div class="wrapper"> -->
 <h1>Add a new picture</h1>
-<form method='POST' action='/photobook'>
+
+<!-- POST is making a wrong request, it should create a new picture -->
+<!-- <form method='POST' action='/albums/<%= data.album.id %>'>
     <input type='submit' value='New Picture' />
-</form>
+</form> -->
 
 <div class="imageContainer">
     <!-- <h2>pictures</h2> -->
-    <% for (let picture of data.pictures) { %>
+    <% for (let photo of data.photos) { %>
     <div class="imageBox">
-        <a href=" /photobook/<%= picture.id%>"><img class="photobook_picture" src="<%= picture.pic_url %>"> </a>
+        <a href="/albums/<%= photo.id%>"><img class="photobook_picture" src="<%= photo.pic_url %>"> </a>
         <div class=" row like-row">
             <img src="/notLiked.png" id="likedButton" width="36">
             <h5>Liked status</h5>
@@ -21,12 +23,12 @@
             </div>
         </div>
         <div class="row">
-            <form method="POST" action="/photobook/<%= picture.id %>?_method=DELETE">
+            <form method="POST" action="/albums/<%= photo.id %>?_method=DELETE">
                 <input type="submit" value="Delete this picture">
             </form>
         </div>
         <p>Temp</p>
-        <h2><%= picture.pic_desc %></h2>
+        <h2><%= photo.pic_desc %></h2>
     </div>
 
     <% } %>
