@@ -22,11 +22,11 @@ photoController.show = (req, res, next) => {
 }
 photoController.create = (req, res, next) => {
     new Photo({
-        pic_url: req.body.pic_url || 'test',
-        album_id: 3,
-        pic_desc: req.body.pic_desc || 'test',
+        pic_url: req.body.pic_url || 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg?auto=compress&cs=tinysrgb&h=350',
+        album_id: 71,
+        pic_desc: req.body.pic_desc || 'Test image',
         liked: req.body.liked || true,
-        pic_url_full_size: req.body.pic_url_full_size,
+        pic_url_full_size: req.body.pic_url_full_size || 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg',
     })
         .save()
         .then(() => {

@@ -2,7 +2,7 @@
 
 <!-- <div class="wrapper"> -->
 <div class="albums-page-title center">
-    <h1>Your albums</h1>
+    <h1>Albums Page</h1>
 </div>
 <div class="albums-container">
     <div class="col-25">
@@ -19,12 +19,12 @@
             <div class="albumRow">
                 <div class="left">
                     <a href="/albums/<%= album.id%>">
-                        <h1><%= album.name %></h1>
+                        <h2><%= album.name %></h2>
                     </a>
                 </div>
                 <div class="right">
                     <form method="POST" action="/albums/<%= album.id %>?_method=DELETE">
-                        <input type="submit" value="Delete album">
+                        <input class="deleteButton" type="submit" value="Delete album">
                     </form>
                 </div>
             </div>
@@ -33,7 +33,5 @@
         <% } %>
     </div>
 </div>
-
-
 
 <%- include('./partials/end') %>

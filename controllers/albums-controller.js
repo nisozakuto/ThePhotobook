@@ -3,7 +3,7 @@ const Album = require('../models/Albums-model');
 const AlbumController = {};
 
 AlbumController.index = (req, res, next) => {
-    Album.getAll()
+    Album.findUserAlbums(req.user.id)
         .then((albums) => {
             res.render('albums',
                 {

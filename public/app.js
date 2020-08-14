@@ -17,8 +17,6 @@ function likedFunction() {
     }
 }
 
-
-
 const categories = [
     'Holding Hands',
     'Wedding',
@@ -30,7 +28,6 @@ const categories = [
     'Happy birthday',
     'Strategy'
 ];
-
 
 const albumsContainer = document.querySelector('.albums-container');
 const col25 = document.querySelector('.col-25');
@@ -48,6 +45,5 @@ if (albumsContainer) {
         col25.appendChild(ul);
     }
 }
-
 
 likedButton.addEventListener("click", likedFunction);

@@ -49,8 +49,8 @@ class Album {
             RETURNING *`,
                 this
             )
-            .then((album) => {
-                return Object.assign(this, album);
+            .then((savedAlbum) => {
+                return Object.assign(this, savedAlbum);
             });
     }
 
@@ -58,9 +58,9 @@ class Album {
         return db.none('DELETE FROM albums WHERE id = $/id/', this);
     }
 
-    findUserAlbums() {
+    static findUserAlbums(id) {
         return db
-            .manyOrNone(`SELECT * FROM albums WHERE user_id = $/1/`, this)
+            .manyOrNone('SELECT * FROM albums WHERE user_id = $1', id)
             .then((albums) => {
                 return albums.map((album) => new Album(album))
             });

@@ -7,11 +7,11 @@ VALUES
     ('https://images.pexels.com/photos/7367/startup-photo.jpg?auto=compress&cs=tinysrgb&h=350', 1, 'APIs', TRUE, 'https://images.pexels.com/photos/7367/startup-photo.jpg'),
     ('https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&h=350', 2, 'Manhattan', true, 'https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg'),
     ('https://images.pexels.com/photos/17632/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350', 3, 'Cities', true, 'https://images.pexels.com/photos/17632/pexels-photo.jpg'),
-    ('https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&h=350', 56, 'Cities', true, 'https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg'),
-    ('https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&h=350', 56, 'Cities', true, 'https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg'),
-    ('https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&h=350', 56, 'Cities', true, 'https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg'),
-    ('https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&h=350', 56, 'Cities', true, 'https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg'),
-    ('https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&h=350', 58, 'Cities', true, 'https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg');
+    ('https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&h=350', 71, 'Cities', true, 'https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg'),
+    ('https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&h=350', 73, 'Cities', true, 'https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg'),
+    ('https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&h=350', 73, 'Cities', true, 'https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg'),
+    ('https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&h=350', 73, 'Cities', true, 'https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg'),
+    ('https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&h=350', 73, 'Cities', true, 'https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg');
 
 
 INSERT INTO pictures

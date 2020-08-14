@@ -15,7 +15,6 @@ const usersController = {
           // photos,
         }
       }
-
     )
     // res.json({
     //   message: "ok working",
@@ -39,7 +38,7 @@ const usersController = {
       .then(user => {
         req.login(user, (err) => {
           if (err) return next(err);
-          res.redirect('/user');
+          res.redirect('/albums');
         })
       }).catch(next);
   }

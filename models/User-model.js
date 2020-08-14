@@ -53,13 +53,15 @@ class User {
         return Object.assign(this, savedUser)
     }
 
-    findUserPictures() {
-        return db
-            .manyOrNone('SELECT * FROM users WHERE user_id = $1', this.id)
-            .then((pictures) => {
-                return pictures.map((picture) => new Picture(picture));
-            });
-    }
+
+    //Below is func is in album-model
+    // findUserAlbum() {
+    //     return db
+    //         .manyOrNone('SELECT * FROM albums WHERE user_id = $1', this.id)
+    //         .then((albums) => {
+    //             return albums.map((album) => new Album(album));
+    //         });
+    // }
 }
 
 module.exports = User

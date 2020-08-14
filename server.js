@@ -44,13 +44,10 @@ app.get('/', (req, res) => {
         appName: 'The photobook'
     });
 });
-
-app.use('/albums', albumRouter);
-
 // app.use('/photobook', photobookRouter);
+app.use('/albums', albumRouter);
 app.use('/auth', authRouter)
-app.use('/user', usersRouter)
-
+app.use('/users', usersRouter)
 app.use('*', (req, res) => {
     res.render('404', {
         appName: 'The photobook'

@@ -1,12 +1,12 @@
 <%- include('./partials/boilerplate') %>
 
 <!-- <div class="wrapper"> -->
-<h1>Add a new picture</h1>
+<h3>Add a new picture</h3>
 
 <!-- POST is making a wrong request, it should create a new picture -->
-<!-- <form method='POST' action='/albums/<%= data.album.id %>'>
+<form method='POST' action='/albums/<%= data.photos.id %>'>
     <input type='submit' value='New Picture' />
-</form> -->
+</form>
 
 <div class="imageContainer">
     <!-- <h2>pictures</h2> -->
@@ -23,12 +23,13 @@
             </div>
         </div>
         <div class="row">
+            <!-- Below deletes the album -->
             <form method="POST" action="/albums/<%= photo.id %>?_method=DELETE">
                 <input type="submit" value="Delete this picture">
             </form>
         </div>
         <p>Temp</p>
-        <h2><%= photo.pic_desc %></h2>
+        <h4><%= photo.pic_desc %></h4>
     </div>
 
     <% } %>
