@@ -28,7 +28,7 @@ class Album {
 
     photos() {
         return db.manyOrNone(`
-        SELECT * FROM pictures 
+pictures        SELECT pictures.* FROM pictures 
         JOIN albums 
         ON pictures.album_id = albums.id
         WHERE albums.id = $1
