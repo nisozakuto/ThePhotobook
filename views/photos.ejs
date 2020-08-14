@@ -14,7 +14,7 @@
 </div>
 
 <div class="imageContainer">
-    <% console.log("this is returning the photos on tha page: ", data) %>
+    <% console.log("this is returning the photos on tha page: ", data.photos) %>
     <% for (let photo of data.photos) { %>
     <div class="imageBox">
         <a href="/photos/<%= photo.id%>"><img class="photobook_picture" src="<%= photo.pic_url %>"> </a>
@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <!-- Below deletes the album -->
-            <form method="POST" action="/albums/<%= photo.id %>?_method=DELETE">
+            <form method="POST" action="/photos/<%= photo.id %>?_method=DELETE">
                 <input type="submit" value="Delete this picture">
             </form>
         </div>
