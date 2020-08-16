@@ -15,6 +15,9 @@ header nav ul {
    align-items:center; 
 }
 
+.logo a{
+  text-decoration:none;
+}
 .logo:visited
 {
   color: #d17f90;
@@ -40,13 +43,14 @@ header ul, .logo{
 .page{
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 } 
 
 main{
   flex-grow: 1;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -267,7 +271,9 @@ body {
   }
 
   footer{
+    background-color:grey;
     text-align: center;
+    color: white;
   }
 
   .wrapper-not-found{
