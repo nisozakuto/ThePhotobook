@@ -8,6 +8,7 @@ photoController.index = (req, res) => {
             console.log(e)
         })
         .then((photos) => {
+            console.log("Getting all the pictures")
             res.render('photos',
                 {
                     message: 'ok',
@@ -15,6 +16,21 @@ photoController.index = (req, res) => {
                 })
         })
 };
+
+// photoController.index = (req, res) => {
+//     console.log("photocontroller: ", req.params.id)
+//     Photo.albumPhotos(id)
+//         .then((e) => {
+//             console.log(e)
+//         })
+//         .then((photos) => {
+//             res.render('photos',
+//                 {
+//                     message: 'ok',
+//                     data: { photos }
+//                 })
+//         })
+// };
 
 photoController.show = (req, res, next) => {
     Photo.getById(req.params.id)
@@ -31,16 +47,19 @@ photoController.show = (req, res, next) => {
 
 photoController.create = (req, res, next) => {
     console.log("res.locals.photos", res.locals.photos);
+    console.log("AlbumID", res.body)
+    // console.log("req.params", req)
+
     new Photo({
         pic_url: res.locals.photos, // || req.body.pic_url || // Test 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg?auto=compress&cs=tinysrgb&h=350',
-        album_id: 104,
-        pic_desc: req.body.pic_desc,
+        album_id: 105,
+        pic_desc: 'desc,',
         liked: req.body.liked || true,
-        pic_url_full_size: req.body.pic_url_full_size || 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg',
+        pic_url_full_size: res.locals.photos.original, // || req.body.pic_url_full_size || 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg',
     })
         .save()
         .then((newPhoto) => {
-            console.log('createLog: ', newPhoto)
+            console.log("newphotoID ", newPhoto.album_id)
             res.redirect(`/albums/${newPhoto.album_id}`)
             // res.redirect('/photos'), {
             //     data: e

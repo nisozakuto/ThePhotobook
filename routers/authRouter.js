@@ -12,7 +12,6 @@ authRouter.post(
     '/login',
     passport.authenticate('local', {
         successRedirect: '/users',
-        // successRedirect: '/albums',
         failureRedirect: '/auth/login',
         failureFlash: true,
     })
