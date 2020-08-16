@@ -27,6 +27,16 @@ class Photo {
             });
     }
 
+    albumPhotos(id) {
+        return db
+            .manyOrNone(`
+        SELECT * FROM pictures
+        WHERE album_id = $1`, id)
+            .then((photos) => {
+                return photos.map((photo) => new Photo(photo))
+            })
+    }
+
     save() {
         return db
             .one(

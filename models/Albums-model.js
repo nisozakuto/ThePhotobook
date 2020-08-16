@@ -6,6 +6,7 @@ class Album {
         this.id = albums.id || null;
         this.name = albums.name;
         this.user_id = albums.user_id || 1;
+        this.album_cover = albums.album_cover;
     }
 
     static getAll() {
@@ -44,12 +45,13 @@ class Album {
         return db
             .one(
                 `
-            INSERT INTO albums(name, user_id)
-            VALUES($/name/, $/user_id/)
+            INSERT INTO albums(name, user_id, album_cover)
+            VALUES($/name/, $/user_id/, $/album_cover/)
             RETURNING *`,
                 this
             )
             .then((savedAlbum) => {
+                // console.log("savedAlbum:", savedAlbum)
                 return Object.assign(this, savedAlbum);
             });
     }

@@ -6,19 +6,23 @@ const photoHelpers = require('../services/photo-helpers')
 
 photoRouter.get('/', photoController.index);
 
-photoRouter.get('/newphoto', photoHelpers.getAPicture, photoController.create, (req, res, next) => {
+photoRouter.get('/new', (req, res) => {
+    res.render('photobook/add');
+});
+
+photoRouter.get('/newphoto', photoHelpers.getAPicture, (req, res, next) => {
     console.log('asked for a new picture')
     res.render('myphoto', {
-        photo: res.locals.photo
+        photo: res.locals.photos,
+        // medium: res.locals.photos.medium,
+        // original: res.locals.photo.original
     })
-    next();
 })
+
 photoRouter.post('/', photoController.create, (req, res) => {
-    // res.render('/', {
-    //     photo: res.locals.photo
-    // })
     next();
 });
+
 photoRouter.get('/:id([0-9]+)', photoController.show, (req, res) => {
     res.render('photobook/show', {
         photo: res.locals.photo

@@ -3,3 +3,6 @@ CREATE TABLE IF NOT EXISTS albums(
     name VARCHAR(255) NOT NULL,
     user_id INT NOT NULL
 );
+
+ALTER TABLE albums
+ADD COLUMN album_cover text;

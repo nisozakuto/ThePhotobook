@@ -9,12 +9,14 @@ const getAPicture = (req, res, next) => {
         },
     }).then(fetchRes => fetchRes.json())
         .then(allPictures => {
-            // console.log("allpicture", allPictures.photos[1].src);
-            console.log("photoHelper ", allPictures.photos[0].src.medium)
             if (allPictures.photos.length) {
-                res.locals.photos = allPictures.photos[count].src.medium;
+                if ((allPictures.photos.length + 1) == count)
+                    count = 0;
+                res.locals.photos = allPictures.photos[count].src;
+                console.log('Photos Object in helper', res.locals.photos.medium)
+                console.log("Photos Object: ", allPictures.photos[count].src.original)
                 count++;
-                console.log("photoHelper2", res.locals.photos)
+                return
             }
             next();
         })
@@ -24,6 +26,27 @@ const getAPicture = (req, res, next) => {
         });
 };
 
+const getTheFirstPicture = (req, res, next) => {
+    fetch(`https://api.pexels.com/v1/search?query=ball`, {
+        headers: {
+            Authorization: process.env.PEXELS_API_KEY,
+        },
+    }).then(fetchRes => fetchRes.json())
+
+        .then(allPictures => {
+            console.log('got a pic')
+            if (allPictures.photos.length) {
+                res.locals.photos = allPictures.photos[0].src;
+            }
+            next();
+        })
+        .catch((err) => {
+            console.log(err);
+            next(err);
+        });
+};
+
+
 module.exports = {
-    getAPicture,
+    getAPicture, getTheFirstPicture
 };

@@ -15,41 +15,28 @@ AlbumController.index = (req, res, next) => {
 
 AlbumController.show = async (req, res, next) => {
     const album = await Album.getById(req.params.id)
+    console.log("ID here", req.params.id)
     const photos = await album.photos()
     res.render('photos',
         {
             message: 'Ok',
             data: {
-                photos
-                // photos: photos,
-                // album: album.id
+                photos,
+                id: req.params.id
             }
         })
-    //     .then((album) => {
-    //         console.log(album.photos())
-    //         album.photos()
-    //             .then((photos) => {
-    //                 res.render('pictures',
-    //                     {
-    //                         message: 'Ok',
-    //                         data: {
-    //                             photos: photos
-    //                         }
-    //                     })
-    //             })
-    //     })
 }
 
 AlbumController.create = (req, res, next) => {
-    console.log("body: ", req.body)
-    console.log("req.user: ", req.user.id)
     new Album({
         name: req.body.name,
-        user_id: req.user.id
+        user_id: req.user.id,
+        album_cover: res.locals.photos.medium
     })
         .save()
-        .then(() => {
-            res.redirect('/albums')
+        .then((album) => {
+            console.log("albumid: ", album.id)
+            res.redirect('/albums/')
         }).catch(next);
 };
 
