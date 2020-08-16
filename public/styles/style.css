@@ -66,6 +66,9 @@ h2{
 h3{
   font-size: 24px;
 }
+h3 a{
+  text-decoration: none;
+}
 
 h4{
   font-size: 18px;
@@ -127,6 +130,11 @@ box-shadow: salmon 5px 5px;
   width: 70vw;
   margin: 0 auto;
 }
+
+.albums-left-container{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;}
   
 .col-25
 {
@@ -145,7 +153,7 @@ ul.col-25{
 .col-75{
   float: left;
   width: 75%;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .col-75 h1{
@@ -169,14 +177,21 @@ ul li:hover{
 
 }
 
-.albumBox{
+.albumRow{
   background-color: rgba(223,	223	,223, 0.4	);
-  font-size: 30px;
-  height: 75px;
+  /* position: absolute; */
+  display: flex;
+  bottom: 0px;
+  width: 100%;
+  justify-content: space-between;
+
+
+  /* font-size: 30px;
   display: flex;
   flex-direction: column ;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
+  
 }
 
 .albumBox h1{
@@ -187,22 +202,17 @@ ul li:hover{
   background-color: rgba(223,	223	,223, 1	);
 }
 
-.albumRow{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .left
 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
 }
 
 /* ALBUM END */
-
+.album{
+  margin:15px;
+}
 .centerContentOfADiv{
   display: flex;
   justify-content: center;
@@ -257,8 +267,8 @@ box-shadow: salmon 5px 5px;
 
 .deleteButton{
   cursor: pointer;
-  width: 100px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   background-color: salmon;
   border: 0;
 }

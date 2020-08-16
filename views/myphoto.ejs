@@ -2,12 +2,10 @@
 <%- include('./partials/nav') %>
 
 <div class="wrapper">
-
-    <h1>New photo asked</h1>
-    <p><% photo %>sdfds</p>
-
+    <% console.log("myPhoto:",photo) %>
+    <% console.log("LargePhoto:", photo.large) %>
+    <h1>Your new picture</h1>
+    <img src="<%= photo.large %>">
 </div>
-
-
 
 <%- include('./partials/end') %>

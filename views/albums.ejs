@@ -16,23 +16,23 @@
         <h1>
             Your Albums
         </h1>
-        <% for (let album of data.albums) { %>
-        <div class="albumBox">
-            <div class="albumRow">
-                <div class="left">
-                    <a href="/albums/<%= album.id%>">
-                        <h2><%= album.name %></h2>
-                    </a>
-                </div>
-                <div class="right">
-                    <form method="POST" action="/albums/<%= album.id %>?_method=DELETE">
-                        <input class="deleteButton" type="submit" value="Delete album">
-                    </form>
+        <div class="albums-left-container">
+            <% for (let album of data.albums) { %>
+            <div class="album">
+                <img src="<%= album.album_cover %>" width="350px">
+                <div class="albumRow">
+                    <div class="left">
+                        <h3><a href="/albums/<%= album.id%>"><%= album.name %></a></h3>
+                    </div>
+                    <div class="right">
+                        <form method="POST" action="/albums/<%= album.id %>?_method=DELETE">
+                            <input class="deleteButton" type="submit" value="Delete">
+                        </form>
+                    </div>
                 </div>
             </div>
-
+            <% } %>
         </div>
-        <% } %>
     </div>
 </div>
 

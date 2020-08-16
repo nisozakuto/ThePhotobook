@@ -4,14 +4,14 @@
 <!-- <div class="wrapper"> -->
 <div class="addAPic">
     <!-- <h3>Add a new picture</h3> -->
-
+    <h2><a href="/photos/new">Get a new one</a> </h2>
     <form method='GET' action='/photos/newphoto'>
         <input type='submit' value='Show me more pictures' />
     </form>
 </div>
 
 <div class="imageContainer">
-    <% console.log(data.photos) %>
+    <% console.log("id in image container: ",data.id) %>
     <% if(!data.photos.length){%>
     <h1> This runs</h1>
     <!-- get 20 pictures -->

@@ -1,0 +1,18 @@
+<%- include('../partials/boilerplate') %>
+<%- include('../partials/nav') %>
+
+<div class="add">
+    <form method='GET' action='/photos/newphoto'>
+        <input type='submit' value='Show me more pictures' />
+    </form>
+
+    <form method="POST" action="/photos">
+        <input type="text" name="url" placeholder="url">
+        <input type="text" name="category" placeholder="category">
+        <input type="number" name="album_id" placeholder="Album ID">
+        <input type="submit" value="Add">
+    </form>
+</div>
+
+
+<%- include('../partials/end') %>
