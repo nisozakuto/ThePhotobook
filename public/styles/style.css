@@ -1,11 +1,45 @@
-
 body{
 
 }
+
+header nav ul {
+  display: flex;
+  box-sizing: border-box;
+}
+  
+.logo {
+  font-size: 1.5em;
+  font-weight: 900;
+  box-sizing: border-box;
+   display:flex; 
+   align-items:center; 
+}
+
+.logo:visited
+{
+  color: #d17f90;
+}
+
+header ul li a, .logo {
+  /* display: block; */
+  padding: 0 15px;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #d17c78;
+}   
+header ul li a:hover {
+  color: white;
+}   
+
+header ul, .logo{
+  list-style-type: none;
+  overflow: hidden;
+}
+
+
 .page{
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 } 
 
 main{
@@ -84,7 +118,13 @@ h4{
     line-height: 75px;
     font-size: 30px;
   }
-
+  .nav_links{
+    list-style: none;
+  }
+  .nav_links li{
+   display: inline-block;
+  }
+    
   ul li:hover{
 
   }
@@ -218,11 +258,12 @@ body {
 
   header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
-    justify-content: space-around;
     color: #d17c78;
     background-color: #00000024;
-    padding: 25px;
+    padding: 25px 10%;
   }
 
   footer{
@@ -271,39 +312,6 @@ body {
       font-size: 48px;
     }
   }
-  header nav ul {
-    display: flex;
-    box-sizing: border-box;
-  }
-    
-  .logo {
-    font-size: 2em;
-    font-weight: 900;
-    box-sizing: border-box;
-     display:flex; 
-     align-items:center; 
-  }
-
-  .logo:visited
-  {
-    color: #d17f90;
-
-  }
-  
-  header nav ul li a {
-    padding: 0 15px;
-    text-decoration: none;
-    box-sizing: border-box;
-    color: #d17c78;
-  }   
-  header nav ul li a:hover {
-    color: white;
-  }   
-
-  header ul{
-    list-style-type: none;
-  }
-
   .like-row {
     display: flex;
     align-items: center;

@@ -45,5 +45,4 @@ if (albumsContainer) {
         col25.appendChild(ul);
     }
 }
-
-likedButton.addEventListener("click", likedFunction);
+if (albumsContainer) { likedButton.addEventListener("click", likedFunction); }
