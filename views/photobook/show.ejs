@@ -2,13 +2,13 @@
 <%- include('../partials/nav') %>
 
 <div class="wrapper">
-    <img class="full-size-image" src="<%= photo.pic_url_full_size %>">
-    <div class="full-size-row">
-        <img src="/notLiked.png" id="likedButton" width="36">
-        <h5>Liked status: <%= photo.liked %></h5>
+    <div class="fullSizeImage">
+        <img class="full-size-image" src="<%= photo.pic_url_full_size %>">
     </div>
+
     <div class="full-size-row">
         <div>
+            Description here
             <!-- <h4>See it in full res</h4> -->
         </div>
     </div>
@@ -18,11 +18,5 @@
 </div>
 
 
-
-<h3><%= photo.pic_url %></h3>
-<h3><%= photo.album_id %></h3>
-<h3><%= photo.pic_desc %></h3>
-<h3><%= photo.liked %></h3>
-<h3><%= photo.pic_url_full_size %></h3>
 
 <%- include('../partials/end') %>

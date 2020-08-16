@@ -6,11 +6,15 @@
     <!-- <h3>Add a new picture</h3> -->
 
     <form method='GET' action='/photos/newphoto'>
-        <input type='submit' value='add!' />
+        <input type='submit' value='Show me more pictures' />
     </form>
 </div>
 
 <div class="imageContainer">
+    <% if(!data.photos.length){%>
+    <h1> This runs</h1>
+    <!-- get 20 pictures -->
+    <% } %>
 
     <% console.log("this is returning the photos on the page: ", data.photo) %>
     <% for (let photo of data.photos) { %>
@@ -21,18 +25,19 @@
             <h5>Liked status</h5>
         </div>
         <div class="row">
-            <div>
-                <h4>See it in full res</h4>
+            <div class="centerContentOfADiv">
+                <h4><a href="/photos/<%= photo.id%>">See it in full res</a></h4>
             </div>
         </div>
-        <div class="row">
+        <div class="row centerContentOfADiv">
             <!-- Below deletes the album -->
             <form method="POST" action="/photos/<%= photo.id %>?_method=DELETE">
                 <input type="submit" value="Delete this picture">
             </form>
         </div>
-        <p>Temp</p>
-        <h4><%= photo.pic_desc %></h4>
+        <div class="row centerContentOfADiv">
+            <h4>Desc: <%= photo.pic_desc %></h4>
+        </div>
     </div>
     <% } %>
 </div>
