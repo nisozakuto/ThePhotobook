@@ -2,19 +2,20 @@
 <%- include('./partials/nav') %>
 
 <!-- <div class="wrapper"> -->
-<div class="albums-page-title center">
-    <h1>Albums Page</h1>
+<div class="albums-page-title ">
+    <h1 class="center">Albums Page</h1>
 </div>
 <div class="albums-container">
     <div class="col-25">
-
+        <h1>
+            Categories
+        </h1>
     </div>
 
     <div class="col-75">
         <h1>
-            YOUR ALBUMS
+            Your Albums
         </h1>
-
         <% for (let album of data.albums) { %>
         <div class="albumBox">
             <div class="albumRow">
