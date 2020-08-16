@@ -11,12 +11,13 @@
 </div>
 
 <div class="imageContainer">
+    <% console.log(data.photos) %>
     <% if(!data.photos.length){%>
     <h1> This runs</h1>
     <!-- get 20 pictures -->
     <% } %>
 
-    <% console.log("this is returning the photos on the page: ", data.photo) %>
+    <% console.log("this is returning the photos on the page: ", data.photos) %>
     <% for (let photo of data.photos) { %>
     <div class="imageBox">
         <a href="/photos/<%= photo.id%>"><img class="photobook_picture" src="<%= photo.pic_url %>"> </a>
