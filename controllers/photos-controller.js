@@ -30,10 +30,11 @@ photoController.show = (req, res, next) => {
 }
 
 photoController.create = (req, res, next) => {
+    console.log("res.locals.photos", res.locals.photos);
     new Photo({
-        pic_url: req.body.pic_url || 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg?auto=compress&cs=tinysrgb&h=350',
+        pic_url: res.locals.photos, // || req.body.pic_url || // Test 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg?auto=compress&cs=tinysrgb&h=350',
         album_id: 104,
-        pic_desc: req.body.pic_desc || 'Test image',
+        pic_desc: req.body.pic_desc,
         liked: req.body.liked || true,
         pic_url_full_size: req.body.pic_url_full_size || 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg',
     })
@@ -52,15 +53,18 @@ photoController.create = (req, res, next) => {
             // }
         })
 }
-
+var deletedPhotoId;
+// I used this work around but am not proud of it
 photoController.delete = (req, res, next) => {
     Photo.getById(req.params.id)
         .then((photo) => {
             console.log("deleting: ", photo)
+            deletedPhotoId = photo.album_id
             return photo.delete();
         })
-        .then(() => {
-            res.redirect('/photos');
+        .then((e) => {
+            console.log(e);
+            res.redirect(`/albums/${deletedPhotoId}`)
         })
 }
 module.exports = photoController;
