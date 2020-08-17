@@ -7,6 +7,7 @@ Client's photographer will send you the pictures through this application. Clien
 Once you clone this to your local machine, make sure to run `npm install`, create your secret key and add your PEXEL's API key to your .env file.
 
 # Heroku Link
+Continuous integration implemented
 - Staging App: https://secure-crag-66782.herokuapp.com/
 - Production App: https://thephotobook.herokuapp.com/
 
