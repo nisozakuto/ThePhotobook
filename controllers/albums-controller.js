@@ -15,14 +15,14 @@ AlbumController.index = (req, res, next) => {
 
 AlbumController.show = async (req, res, next) => {
     const album = await Album.getById(req.params.id)
-    console.log("ID here", req.params.id)
+    console.log("Album ID here", req.params.id)
     const photos = await album.photos()
     res.render('photos',
         {
             message: 'Ok',
             data: {
                 photos,
-                id: req.params.id
+                id: req.params.id,
             }
         })
 }
@@ -35,6 +35,7 @@ AlbumController.create = (req, res, next) => {
     })
         .save()
         .then((album) => {
+            console.log("Name: ", album.name)
             console.log("albumid: ", album.id)
             res.redirect('/albums/')
         }).catch(next);

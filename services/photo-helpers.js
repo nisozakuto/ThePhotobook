@@ -3,7 +3,7 @@ require('dotenv').config();
 var count = 0;
 const getAPicture = (req, res, next) => {
     // fetch(`https://api.pexels.com/v1/search?query=${res.locals.photo.src.medium}`, {
-    fetch(`https://api.pexels.com/v1/search?query=ball`, {
+    fetch(`https://api.pexels.com/v1/search?query=${res.locals.album.name}`, {
         headers: {
             Authorization: process.env.PEXELS_API_KEY,
         },
@@ -27,12 +27,12 @@ const getAPicture = (req, res, next) => {
 };
 
 const getTheFirstPicture = (req, res, next) => {
-    fetch(`https://api.pexels.com/v1/search?query=ball`, {
+    console.log("checking the name", req.body.name)
+    fetch(`https://api.pexels.com/v1/search?query=${req.body.name}`, {
         headers: {
             Authorization: process.env.PEXELS_API_KEY,
         },
     }).then(fetchRes => fetchRes.json())
-
         .then(allPictures => {
             console.log('got a pic')
             if (allPictures.photos.length) {

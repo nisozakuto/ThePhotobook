@@ -16,21 +16,6 @@ for (let i = 0; i < likedButton.length; i++) {
     })
 
 }
-// for (button of likedButton) {
-//     button.addEventListener('click', function () {
-//         console.log(button);
-//         if (liked == false) {
-//             button[i].setAttribute('src', '/liked.png')
-//             console.log(button);
-//             liked = true;
-//         }
-//         else {
-//             button[i].setAttribute('src', '/notLiked.png')
-//             console.log(button);
-//             liked = false;
-//         }
-//     })
-// }
 
 function likedFunction() {
     if (liked == false) {
