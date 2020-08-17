@@ -1,6 +1,5 @@
 const fetch = require('node-fetch');
 require('dotenv').config();
-var count = 0;
 const getAPicture = (req, res, next) => {
     // fetch(`https://api.pexels.com/v1/search?query=${res.locals.photo.src.medium}`, {
     fetch(`https://api.pexels.com/v1/search?query=${res.locals.album.name}`, {

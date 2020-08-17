@@ -1,13 +1,16 @@
 <%- include('./partials/boilerplate') %>
 <%- include('./partials/navForHomePage') %>
 
-
-<h1>The Photobook</h1>
-<br>
-<br>
-<h3>To get your photobook <a href="/users/new">register</a> </h3>
-<br>
-<br>
-<h3>Already a member? <a href="/auth/login">Login</a></h3>
+<div class="indexDiv">
+    <div class="whiteBackground">
+        <h1 class="textCenter">The Photobook</h1>
+        <br>
+        <br>
+        <h3 id="RegisterText">To get your photobook <a href="/users/new">Register</a></h3>
+        <h3 id="LoginText">
+            Already a member? <a href="/auth/login">Login</a>
+        </h3>
+    </div>
+</div>
 
 <%- include('./partials/end') %>

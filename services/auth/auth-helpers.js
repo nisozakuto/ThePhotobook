@@ -11,7 +11,7 @@ function loginRedirect(req, res, next) {
 
 function loginRequired(req, res, next) {
     if (!req.user) return res.redirect('auth/login');
-    console.log(req.user.username)
+    res.locals.username = req.user.username
     return next();
 }
 

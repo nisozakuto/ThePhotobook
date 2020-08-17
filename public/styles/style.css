@@ -1,5 +1,5 @@
 body{
-
+  overflow: hidden;
 }
 
 header nav ul {
@@ -17,6 +17,13 @@ header nav ul {
 
 .logo a{
   text-decoration:none;
+  color: #d17f90;
+
+}
+.logo a:hover{
+
+  color:white;
+
 }
 .logo:visited
 {
@@ -53,6 +60,18 @@ main{
   justify-content: center;
   flex-direction: column;
 }
+
+.indexDiv{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  background-image: url('https://live.staticflickr.com/3834/9683243336_e704d095e7_k_d.jpg');
+  background-position: center;
+}
+
 
 /* GENERAL Hs */
 h1{
@@ -91,6 +110,7 @@ h4 a{
     display: flex;  
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     width: 400px;
     height: 400px;
     margin: 7em auto;
@@ -99,10 +119,24 @@ h4 a{
   }
 
   form { 
-    display: block;
+    display: flex;
     margin-top: 0em;
+    flex-direction: column;
   }
 
+  .submit {
+    background-color: #d17c78;
+    cursor: pointer;
+      border-radius: 5em;
+      border: 0;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin: 0 auto;
+      font-size: 13px;
+      box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  }
   /* USERS PAGE START */
 .userPage{
   margin: 10px;
@@ -116,15 +150,12 @@ h4 a{
 .userPage:hover{
   text-decoration: none;
   background-color: #f2f2f2f2;
-box-shadow: salmon 5px 5px;
+  box-shadow: salmon 5px 5px;
 }
-
-
-  /* USERS PAGE END */
+/* USERS PAGE END */
 
 
 /* ALBUMS START */
-
 .albums-container{
   display: flex;
   width: 70vw;
@@ -173,10 +204,6 @@ ul.col-25{
   display: inline-block;
 }
   
-ul li:hover{
-
-}
-
 .albumRow{
   background-color: rgba(223,	223	,223, 0.4	);
   /* position: absolute; */
@@ -220,7 +247,26 @@ ul li:hover{
 .center{
   margin: 0 auto;
 }
+.textCenter{
+  text-align: center;
+}
 
+.whiteBackground{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.35);
+  width: 80vw;  
+  height: 60vh;
+text-align: center;
+}
+.whiteBackground a{
+font-weight: 600;
+}
+
+#RegisterText{
+  margin-bottom: 25px;
+}
 .homepage{
     width: 100vw;
     background-color: salmon;
@@ -298,10 +344,6 @@ h2{
     margin: 0 auto;
 }
 
-form { 
-  display: block;
-  margin-top: 0em;
-}
 
 .center{
 margin: 0 auto}
@@ -320,6 +362,9 @@ footer{
   background-color:grey;
   text-align: center;
   color: white;
+  padding-top: 5px ;
+   padding-bottom: 5px;
+
 }
 
 .wrapper-not-found{

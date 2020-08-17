@@ -3,28 +3,15 @@ const User = require('../models/User-model')
 
 const usersController = {
   index(req, res, next) {
-    // req.user
-    //   .findUserPictures()
-    //   .then((photos) => {
     res.render('userPage',
       {
         message: "ok working",
         data:
         {
           user: req.user,
-          // photos,
         }
       }
     )
-    // res.json({
-    //   message: "ok working",
-    //   data:
-    //   {
-    //     user: req.user,
-    //     // photos,
-    //   }
-    // })
-    // })
   },
 
   create(req, res, next) {
