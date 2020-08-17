@@ -18,12 +18,4 @@ INSERT INTO pictures
     (pic_url, album_id, pic_desc, liked, pic_url_full_size)
 VALUES
     ('https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&h=350', 82, 'Cities', true, 'https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg');
-
-
-    
-
-
-
-
-
-    
+   

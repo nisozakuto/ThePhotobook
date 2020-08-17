@@ -51,25 +51,16 @@ photoController.create = (req, res, next) => {
     // console.log("req.params", req)
 
     new Photo({
-        pic_url: res.locals.photos, // || req.body.pic_url || // Test 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg?auto=compress&cs=tinysrgb&h=350',
-        album_id: 105,
+        pic_url: req.body.pic_url, // || req.body.pic_url || // Test 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg?auto=compress&cs=tinysrgb&h=350',
+        album_id: req.body.album_id,
         pic_desc: 'desc,',
         liked: req.body.liked || true,
-        pic_url_full_size: res.locals.photos.original, // || req.body.pic_url_full_size || 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg',
+        pic_url_full_size: res.locals.photos.original || 'NA', // || req.body.pic_url_full_size || 'https://images.pexels.com/photos/239548/pexels-photo-239548.jpeg',
     })
         .save()
         .then((newPhoto) => {
             console.log("newphotoID ", newPhoto.album_id)
             res.redirect(`/albums/${newPhoto.album_id}`)
-            // res.redirect('/photos'), {
-            //     data: e
-            // };
-
-            // res.render('photos'), {
-            //     // res.json({
-            //     message: "ok",
-            //     data: photo
-            // }
         })
 }
 var deletedPhotoId;

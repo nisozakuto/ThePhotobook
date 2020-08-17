@@ -1,13 +1,14 @@
 const fetch = require('node-fetch');
 require('dotenv').config();
+let count = 0;
 const getAPicture = (req, res, next) => {
-    // fetch(`https://api.pexels.com/v1/search?query=${res.locals.photo.src.medium}`, {
-    fetch(`https://api.pexels.com/v1/search?query=${res.locals.album.name}`, {
+    fetch(`https://api.pexels.com/v1/search?query=photobook}`, {
         headers: {
             Authorization: process.env.PEXELS_API_KEY,
         },
     }).then(fetchRes => fetchRes.json())
         .then(allPictures => {
+            console.log(req.body.name)
             if (allPictures.photos.length) {
                 if ((allPictures.photos.length + 1) == count)
                     count = 0;

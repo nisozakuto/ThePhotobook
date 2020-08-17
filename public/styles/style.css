@@ -1,5 +1,4 @@
 body{
-  overflow: hidden;
 }
 
 header nav ul {
@@ -158,7 +157,7 @@ h4 a{
 /* ALBUMS START */
 .albums-container{
   display: flex;
-  width: 70vw;
+  width: 85vw;
   margin: 0 auto;
 }
 

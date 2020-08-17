@@ -19,7 +19,7 @@
         <div class="albums-left-container">
             <% for (let album of data.albums) { %>
             <div class="album">
-                <img src="<%= album.album_cover %>" width="350px">
+                <img src="<%= album.album_cover %>" max-width="350px" maxh-heigt="350px" width="auto" height="auto">
                 <div class="albumRow">
                     <div class="left">
                         <h3><a href="/albums/<%= album.id%>"><%= album.name %></a></h3>

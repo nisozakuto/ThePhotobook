@@ -15,6 +15,7 @@ Once you clone this to your local machine, make sure to run `npm install`, creat
 Please follow this link for the wireframes: https://www.figma.com/file/LFQLAejWD4ZWxUuVTjdRXd/Untitled?node-id=0%3A1
 
 
+
 ## Routes
 - GET /
 
@@ -30,6 +31,7 @@ Albums/Pictures
 
 ## DB Schema 
 
+[Schema](https://imgur.com/7NQtBec)
 
 ## Built with
 - Node JS

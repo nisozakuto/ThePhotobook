@@ -1,11 +1,10 @@
 <%- include('./partials/boilerplate') %>
 <%- include('./partials/nav') %>
 
-<!-- <div class="wrapper"> -->
 <div class="addAPic">
-    <!-- <h3>Add a new picture</h3> -->
-    <h2><a href="/photos/new">Get a new one</a> </h2>
-    <form method='GET' action='/photos/newphoto'>
+    <form method='POST' action='/photos/newphoto'>
+        <input type="text" name="Pose" placeholder="Pose">
+        <input type="number" name="Category" placeholder="Category">
         <input type='submit' value='Show me more pictures' />
     </form>
 </div>
