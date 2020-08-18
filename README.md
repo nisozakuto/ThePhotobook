@@ -16,7 +16,8 @@ Continuous integration implemented
 Please follow this link for the wireframes: https://www.figma.com/file/LFQLAejWD4ZWxUuVTjdRXd/Untitled?node-id=0%3A1
 
 ## User stories
-
+As a user, I want to be able to create an album, click to the album and browse through the pictures. 
+For each picture, I would like to see them in a full resolution in a new page also would like to let my photographer know that I live the picture by clicking to a button.
 
 ## Routes
 - GET /
