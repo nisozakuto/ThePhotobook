@@ -34,30 +34,7 @@ const testAPicture = async (album_name) => {
     // console.log("async", testAPicture)
     let pictureJson = await mypic.json()
     // console.log("async2", pictureJson)
-    // for (let i = 0; i < pictureJson.photos.length; i++) {
-    //     // console.log("SRC", pictureJson.photos[0].src)
-    //     res.locals.photos[i] = pictureJson.photos[0].src
-    //     return
-    // }
     return pictureJson
-    // then(fetchRes => fetchRes.json())
-    //     .then(allPictures => {
-    //         console.log(req.body.name)
-    //         if (allPictures.photos.length) {
-    //             if ((allPictures.photos.length + 1) == count)
-    //                 count = 0;
-    //             res.locals.photos = allPictures.photos[count].src;
-    //             console.log('Photos Object in helper', res.locals.photos.medium)
-    //             console.log("Photos Object: ", allPictures.photos[count].src.original)
-    //             count++;
-    //             return
-    //         }
-    //         next();
-    //     })
-    //     .catch((err) => {
-    //         console.log(err);
-    //         next(err);
-    //     });
 };
 
 

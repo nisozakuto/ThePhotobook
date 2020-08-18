@@ -1,25 +1,18 @@
 <%- include('./partials/boilerplate') %>
 <%- include('./partials/nav') %>
 
-<div class="addAPic">
-    <form method='POST' action='/photos/newphoto'>
-        <input type="text" name="Pose" placeholder="Pose">
-        <input type="number" name="Category" placeholder="Category">
-        <input type='submit' value='Show me more pictures' />
-    </form>
-</div>
+
 
 <div class="imageContainer">
     <% console.log("id in image container: ",data.id) %>
     <div>
-        <h1>Album Id: <%= data.id %></h1>
-        <h1>Album name: <%= data.name %></h1>
+        <h1>Album name: <%= data.name %> | Album Id: <%= data.id %></h1>
+        <% for (let i = 0; i<data.apiPhotos.photos.length; i++){ %>
+        <% console.log(data.apiPhotos.photos) %>
+        <img src="<%= data.apiPhotos.photos[i].src.medium %>">
+        <% } %>
 
     </div>
-    <% if(!data.photos.length){%>
-    <h1>This runs</h1>
-    <!-- get 20 pictures -->
-    <% } %>
 
     <% console.log("this is returning the photos on the page: ", data.photos) %>
     <% for (let photo of data.photos) { %>
