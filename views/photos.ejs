@@ -1,46 +1,16 @@
 <%- include('./partials/boilerplate') %>
 <%- include('./partials/nav') %>
 
-
-
 <div class="imageContainer">
-    <% console.log("id in image container: ",data.id) %>
-    <div>
-        <h1>Album name: <%= data.name %> | Album Id: <%= data.id %></h1>
-        <% for (let i = 0; i<data.apiPhotos.photos.length; i++){ %>
-        <% console.log(data.apiPhotos.photos) %>
-        <img src="<%= data.apiPhotos.photos[i].src.medium %>">
-        <% } %>
-    </div>
 
-    <% console.log("this is returning the photos on the page: ", data.photos) %>
     <% for (let photo of data.photos) { %>
-    <div class="imageBox">
-        <a href="/photos/<%= photo.id%>"><img class="photobook_picture" src="<%= photo.pic_url %>"> </a>
-        <div class=" row like-row">
-            <img src="/notLiked.png" id="likedButton" width="36">
-            <h5>Liked status</h5>
-        </div>
-        <div class="row">
-            <div class="centerContentOfADiv">
-                <h4><a href="/photos/<%= photo.id%>">See it in full res</a></h4>
-            </div>
-        </div>
-        <div class="row centerContentOfADiv">
-            <!-- Below deletes the album -->
-            <form method="POST" action="/photos/<%= photo.id %>?_method=DELETE">
-                <input type="submit" value="Delete this picture">
-            </form>
-        </div>
-        <div class="row centerContentOfADiv">
-            <h4>Desc: <%= photo.pic_desc %></h4>
-        </div>
-    </div>
-    <% } %>
-</div>
+    <% console.log("Log",photo)%>
 
-<!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your
-                browser</a> to improve your experience.</p>
-        <![endif]-->
+    <a class="photos" href="/photos/<%= photo.id%>"><img src="<%= photo.pic_url %>"></a>
+
+    <% } %>
+
+
+
+</div>
 <%- include('./partials/end') %>
