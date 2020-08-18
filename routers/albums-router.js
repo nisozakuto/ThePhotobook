@@ -1,6 +1,6 @@
 const express = require('express');
 const albumRouter = express.Router();
-
+const photoController = require('../controllers/photos-controller');
 const albumController = require('../controllers/albums-controller');
 const photoHelper = require('../services/photo-helpers')
 
@@ -8,7 +8,7 @@ const photoHelper = require('../services/photo-helpers')
 albumRouter.get('/', albumController.index);
 //Create a new album
 //How can I pass information to either of these functions?
-albumRouter.post('/', photoHelper.getTheFirstPicture, albumController.create);
+albumRouter.post('/', photoHelper.getTheFirstPicture, albumController.create, photoController.create);
 //Delete an album
 albumRouter.delete('/:id([0-9]+)', albumController.delete);
 //Show an album

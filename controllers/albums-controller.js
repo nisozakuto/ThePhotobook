@@ -1,5 +1,7 @@
 const Album = require('../models/Albums-model');
-const helper = require('../services/photo-helpers')
+const helper = require('../services/photo-helpers');
+const photoRouter = require('../routers/photos-router');
+const photoController = require('../controllers/photos-controller');
 const AlbumController = {};
 
 AlbumController.index = (req, res, next) => {
@@ -16,9 +18,7 @@ AlbumController.index = (req, res, next) => {
 AlbumController.show = async (req, res, next) => {
     const album = await Album.getById(req.params.id)
     const photos = await album.photos()
-    console.log("Controller2", album.name)
     const apiPhotos = await helper.testAPicture(album.name)
-    // console.log("Controller 0", apiPhotos)
     res.render('photos',
         {
             message: 'Ok',
@@ -31,7 +31,7 @@ AlbumController.show = async (req, res, next) => {
         })
 }
 
-AlbumController.create = (req, res, next) => {
+AlbumController.create = async (req, res, next) => {
     new Album({
         name: req.body.name,
         user_id: req.user.id,
@@ -39,9 +39,10 @@ AlbumController.create = (req, res, next) => {
     })
         .save()
         .then((album) => {
-            console.log("Name: ", album.name)
-            console.log("albumid: ", album.id)
-            res.redirect('/albums/')
+            // console.log("Name: ", album.name)
+            // console.log("albumid: ", album.id)
+            res.locals.album_id = album.id
+            next();
         }).catch(next);
 };
 
