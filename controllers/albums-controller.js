@@ -1,7 +1,5 @@
 const Album = require('../models/Albums-model');
 const helper = require('../services/photo-helpers');
-const photoRouter = require('../routers/photos-router');
-const photoController = require('../controllers/photos-controller');
 const AlbumController = {};
 
 AlbumController.index = (req, res, next) => {

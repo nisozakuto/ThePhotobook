@@ -27,21 +27,24 @@ photoController.show = (req, res, next) => {
 
 photoController.create = async (req, res, next) => {
     // console.log('REQ, photocontroller', req)    
-    console.log('album, id', res.locals.album_id)
-    console.log('RES, photocontroller', req.body.name)
+    // console.log('album, id', res.locals.album_id)
+    // console.log('RES, photocontroller', req.body.name)
     const apiPhotos = await helper.testAPicture(req.body.name)
-    new Photo({
-        pic_url: apiPhotos.photos[1].src.medium,
-        album_id: res.locals.album_id,
-        pic_desc: 'desc,',
-        liked: req.body.liked || true,
-        pic_url_full_size: apiPhotos.photos[1].src.original
-    })
-        .save()
-        .then((newPhoto) => {
-            console.log("newphotoID ", newPhoto.album_id)
-            res.redirect(`/albums/${newPhoto.album_id}`)
+    for (let i = 0; i < 15; i++) {
+        new Photo({
+            pic_url: apiPhotos.photos[i].src.medium,
+            album_id: res.locals.album_id,
+            pic_desc: 'desc,',
+            liked: req.body.liked || true,
+            pic_url_full_size: apiPhotos.photos[i].src.original
         })
+            .save()
+            .then((newPhoto) => {
+                console.log("newphotoID ", newPhoto.album_id)
+                res.redirect(`/albums/${newPhoto.album_id}`)
+            })
+    }
+
 }
 
 var deletedPhotoId;
