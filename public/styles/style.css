@@ -444,6 +444,8 @@ footer{
   max-width: 350px;
 }
 
-.photos{
-  margin:10px
+
+.singleImage{
+  margin:5px;
+  margin-bottom:10px;
 }

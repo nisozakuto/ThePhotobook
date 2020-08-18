@@ -16,7 +16,7 @@ AlbumController.index = (req, res, next) => {
 AlbumController.show = async (req, res, next) => {
     const album = await Album.getById(req.params.id)
     const photos = await album.photos()
-    const apiPhotos = await helper.testAPicture(album.name)
+    // const apiPhotos = await helper.testAPicture(album.name)
     res.render('photos',
         {
             message: 'Ok',
@@ -24,7 +24,7 @@ AlbumController.show = async (req, res, next) => {
                 photos,
                 id: req.params.id,
                 name: album.name,
-                apiPhotos
+                // apiPhotos
             }
         })
 }
@@ -40,6 +40,7 @@ AlbumController.create = async (req, res, next) => {
             // console.log("Name: ", album.name)
             // console.log("albumid: ", album.id)
             res.locals.album_id = album.id
+
             next();
         }).catch(next);
 };

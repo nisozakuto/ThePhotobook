@@ -2,15 +2,18 @@
 <%- include('./partials/nav') %>
 
 <div class="imageContainer">
-
     <% for (let photo of data.photos) { %>
     <% console.log("Log",photo)%>
+    <div class="singleImage">
 
-    <a class="photos" href="/photos/<%= photo.id%>"><img src="<%= photo.pic_url %>"></a>
-
+        <a class="photos" href="/photos/<%= photo.id%>"><img src="<%= photo.pic_url %>"></a>
+        <div class=" row like-row">
+            <img src="/notLiked.png" id="likedButton" width="36">
+            <h5 id="likedStatus">Liked status</h5>
+        </div>
+        <h3 class="textCenter">
+            Album ID: <%= photo.id%> </h3>
+    </div>
     <% } %>
-
-
-
 </div>
 <%- include('./partials/end') %>

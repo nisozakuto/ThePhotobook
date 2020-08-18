@@ -1,16 +1,21 @@
 console.log("start");
 const likedButton = document.querySelectorAll('#likedButton');
-console.log(likedButton)
+const likedStatus = document.querySelectorAll('#likedStatus');
+likedStatus.innerText = '';
+
 let liked = false;
 for (let i = 0; i < likedButton.length; i++) {
-    likedButton[i].addEventListener('click', function () {
+    likedStatus[i].innerText = '';
 
+    likedButton[i].addEventListener('click', function () {
         if (liked == false) {
             likedButton[i].setAttribute('src', '/liked.png')
+            likedStatus[i].innerText = 'Liked'
             liked = true;
         }
         else {
             likedButton[i].setAttribute('src', '/notLiked.png')
+            likedStatus[i].innerText = ''
             liked = false;
         }
     })

@@ -34,7 +34,7 @@ photoController.create = async (req, res, next) => {
         new Photo({
             pic_url: apiPhotos.photos[i].src.medium,
             album_id: res.locals.album_id,
-            pic_desc: 'desc,',
+            pic_desc: `Album #${res.locals.album_id}`,
             liked: req.body.liked || true,
             pic_url_full_size: apiPhotos.photos[i].src.original
         })
