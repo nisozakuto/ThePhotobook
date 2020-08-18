@@ -40,8 +40,8 @@ AlbumController.create = async (req, res, next) => {
             // console.log("Name: ", album.name)
             // console.log("albumid: ", album.id)
             res.locals.album_id = album.id
-
-            next();
+            res.redirect('/albums')
+            next()
         }).catch(next);
 };
 
