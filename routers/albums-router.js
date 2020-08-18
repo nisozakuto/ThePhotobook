@@ -7,10 +7,8 @@ const photoHelper = require('../services/photo-helpers')
 //Get all the albums
 albumRouter.get('/', albumController.index);
 //Create a new album
-
-//How can i pass informatio to either of these functions?
+//How can I pass information to either of these functions?
 albumRouter.post('/', photoHelper.getTheFirstPicture, albumController.create);
-
 //Delete an album
 albumRouter.delete('/:id([0-9]+)', albumController.delete);
 //Show an album

@@ -11,8 +11,13 @@
 
 <div class="imageContainer">
     <% console.log("id in image container: ",data.id) %>
+    <div>
+        <h1>Album Id: <%= data.id %></h1>
+        <h1>Album name: <%= data.name %></h1>
+
+    </div>
     <% if(!data.photos.length){%>
-    <h1> This runs</h1>
+    <h1>This runs</h1>
     <!-- get 20 pictures -->
     <% } %>
 

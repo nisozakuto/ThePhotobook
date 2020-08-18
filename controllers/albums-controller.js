@@ -1,5 +1,5 @@
 const Album = require('../models/Albums-model');
-
+const helper = require('../services/photo-helpers')
 const AlbumController = {};
 
 AlbumController.index = (req, res, next) => {
@@ -15,14 +15,19 @@ AlbumController.index = (req, res, next) => {
 
 AlbumController.show = async (req, res, next) => {
     const album = await Album.getById(req.params.id)
-    console.log("Album ID here", req.params.id)
     const photos = await album.photos()
+    console.log("Controller2", album.name)
+    const pics = await helper.testAPicture(album.name)
+    console.log("Controller 0", pics)
+    // console.log('Res Locals', res)
     res.render('photos',
         {
             message: 'Ok',
             data: {
                 photos,
                 id: req.params.id,
+                name: album.name,
+
             }
         })
 }
