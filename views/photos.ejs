@@ -5,7 +5,6 @@
     <% for (let photo of data.photos) { %>
     <% console.log("Log",photo)%>
     <div class="singleImage">
-
         <a class="photos" href="/photos/<%= photo.id%>"><img src="<%= photo.pic_url %>"></a>
         <div class=" row like-row">
             <img src="/notLiked.png" id="likedButton" width="36">

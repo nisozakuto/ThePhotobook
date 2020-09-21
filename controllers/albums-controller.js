@@ -17,6 +17,7 @@ AlbumController.show = async (req, res, next) => {
     const album = await Album.getById(req.params.id)
     const photos = await album.photos()
     // const apiPhotos = await helper.testAPicture(album.name)
+    console.log("AlbumController", album)
     res.render('photos',
         {
             message: 'Ok',

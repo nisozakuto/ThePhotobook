@@ -1,0 +1,7 @@
+<% const categories = ['Holding Hands', 'Wedding', 'People', 'Family', 'Couple', 'Love', 'Dark background', 'Happy birthday', 'Strategy']; %>
+categories.foreach
+
+<form method="POST" action="/albums">
+    <input class="add-a-new-album" type="submit" value="' + category + '">
+    <input type="hidden" name="name" value="category">
+</form>

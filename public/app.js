@@ -36,21 +36,10 @@ function likedFunction() {
     }
 }
 
-const categories = [
-    'Holding Hands',
-    'Wedding',
-    'People',
-    'Family',
-    'Couple',
-    'Love',
-    'Dark background',
-    'Happy birthday',
-    'Strategy'
-];
 
+const categories = ['Holding Hands', 'Wedding', 'People', 'Family', 'Couple', 'Love', 'Dark background', 'Happy birthday', 'Strategy'];
 const albumsContainer = document.querySelector('.albums-container');
 const col25 = document.querySelector('.col-25');
-
 if (albumsContainer) {
     for (let category of categories) {
         const ul = document.createElement('ul');
@@ -64,4 +53,5 @@ if (albumsContainer) {
         col25.appendChild(ul);
     }
 }
+
 if (albumsContainer) { likedButton.addEventListener("click", likedFunction); }
